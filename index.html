@@ -83,33 +83,49 @@
   <!-- NOTICIAS -->
 
   <section id="noticias" class="section reveal">
-    <h2>Noticias tecnológicas</h2>
+  <h2>Noticias tecnológicas</h2>
 
-    <p class="noticias-texto">
-      En este apartado compartimos tendencias, buenas prácticas y contenidos
-      educativos vinculados al ecosistema tecnológico actual.
-    </p>
+  <p class="noticias-texto">
+    En este apartado compartimos tendencias, buenas prácticas y contenidos
+    educativos vinculados al ecosistema tecnológico actual.
+  </p>
 
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-      <iframe src="https://www.youtube.com/embed/9bZkp7q19f0"></iframe>
-    </div>
-  </section>
+  <div class="video-grid">
+
+    <!-- SOPORTE / TECNOLOGÍA / CIBERSEGURIDAD -->
+
+    <iframe src="https://www.youtube.com/embed/6uRT-bWE2EQ"></iframe>  <!-- Ciberseguridad básica -->
+    <iframe src="https://www.youtube.com/embed/8cV3FZ3YwC0"></iframe>  <!-- Tips tecnología -->
+    <iframe src="https://www.youtube.com/embed/2ePf9rue1Ao"></iframe>  <!-- Buenas prácticas IT -->
+
+  </div>
+</section>
 
   <!-- TALLERES + MAPA -->
 
-  <section id="talleres" class="section reveal">
-    <h2>Talleres</h2>
+ <section id="talleres" class="section reveal">
+  <h2>Talleres</h2>
 
-    <div class="grid">
-      <div class="card">Montevideo</div>
-      <div class="card">Paso de los Toros</div>
-    </div>
+  <div class="grid">
 
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=Uruguay&output=embed"></iframe>
-    </div>
-  </section>
+    <a href="https://www.google.com/maps/search/Taller+Soptec+Montevideo"
+       target="_blank"
+       class="card link">
+       Montevideo
+    </a>
+
+    <a href="https://www.google.com/maps/search/Taller+Soptec+Paso+de+los+Toros"
+       target="_blank"
+       class="card link">
+       Paso de los Toros
+    </a>
+
+  </div>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Uruguay&output=embed"></iframe>
+  </div>
+</section>
 
   <!-- CONTACTO -->
 
@@ -160,18 +176,34 @@
 
   <!-- FOOTER -->
 
-  <footer>
-    <div class="footer-container">
+ <footer>
 
-      <img src="assets/imagotipo.png" class="footer-imagotipo">
+  <div class="footer-container">
 
-      <p>
-        Soptec © <span id="year"></span><br>
-        Este sitio fue desarrollado por el equipo nuestro propio equipo.
-      </p>
+    <img src="assets/imagotipo.png" class="footer-imagotipo">
+
+    <div class="footer-info">
+
+      <div class="status-box">
+        <span class="status-label">Estado del servicio</span>
+        <span id="status" class="status-indicator"></span>
+      </div>
+
+      <div class="clock-box">
+        <span class="clock-label">Hora en la región de Soptec</span>
+        <span id="clock"></span>   <!-- ← ESTE ERA EL FALTANTE 😌🔥 -->
+      </div>
 
     </div>
-  </footer>
+
+    <p>
+      Soptec © <span id="year"></span><br>
+      Desarrollado por el equipo de Soptec
+    </p>
+
+  </div>
+
+</footer>
 
   <!-- JS -->
 
@@ -192,6 +224,7 @@
     });
 
     document.getElementById("year").innerText = new Date().getFullYear();
+    document.getElementById("clock").innerText = time;
 
     const reveals = document.querySelectorAll(".reveal");
 
