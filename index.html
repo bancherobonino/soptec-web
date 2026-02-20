@@ -83,49 +83,45 @@
   <!-- NOTICIAS -->
 
   <section id="noticias" class="section reveal">
-  <h2>Noticias tecnológicas</h2>
+    <h2>Noticias tecnológicas</h2>
 
-  <p class="noticias-texto">
-    En este apartado compartimos tendencias, buenas prácticas y contenidos
-    educativos vinculados al ecosistema tecnológico actual.
-  </p>
+    <p class="noticias-texto">
+      Compartimos contenidos educativos, tendencias tecnológicas y buenas
+      prácticas vinculadas al ecosistema IT.
+    </p>
 
-  <div class="video-grid">
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/6uRT-bWE2EQ"></iframe>
+      <iframe src="https://www.youtube.com/embed/8cV3FZ3YwC0"></iframe>
+      <iframe src="https://www.youtube.com/embed/2ePf9rue1Ao"></iframe>
+    </div>
+  </section>
 
-    <!-- SOPORTE / TECNOLOGÍA / CIBERSEGURIDAD -->
+  <!-- TALLERES -->
 
-    <iframe src="https://www.youtube.com/embed/6uRT-bWE2EQ"></iframe>  <!-- Ciberseguridad básica -->
-    <iframe src="https://www.youtube.com/embed/8cV3FZ3YwC0"></iframe>  <!-- Tips tecnología -->
-    <iframe src="https://www.youtube.com/embed/2ePf9rue1Ao"></iframe>  <!-- Buenas prácticas IT -->
+  <section id="talleres" class="section reveal">
+    <h2>Talleres</h2>
 
-  </div>
-</section>
+    <div class="grid">
 
-  <!-- TALLERES + MAPA -->
+      <a href="https://www.google.com/maps/search/Taller+Soptec+Montevideo"
+         target="_blank"
+         class="card link">
+         Montevideo
+      </a>
 
- <section id="talleres" class="section reveal">
-  <h2>Talleres</h2>
+      <a href="https://www.google.com/maps/search/Taller+Soptec+Paso+de+los+Toros"
+         target="_blank"
+         class="card link">
+         Paso de los Toros
+      </a>
 
-  <div class="grid">
+    </div>
 
-    <a href="https://www.google.com/maps/search/Taller+Soptec+Montevideo"
-       target="_blank"
-       class="card link">
-       Montevideo
-    </a>
-
-    <a href="https://www.google.com/maps/search/Taller+Soptec+Paso+de+los+Toros"
-       target="_blank"
-       class="card link">
-       Paso de los Toros
-    </a>
-
-  </div>
-
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps?q=Uruguay&output=embed"></iframe>
-  </div>
-</section>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps?q=Uruguay&output=embed"></iframe>
+    </div>
+  </section>
 
   <!-- CONTACTO -->
 
@@ -176,34 +172,32 @@
 
   <!-- FOOTER -->
 
- <footer>
+  <footer>
+    <div class="footer-container">
 
-  <div class="footer-container">
+      <img src="assets/imagotipo.png" class="footer-imagotipo">
 
-    <img src="assets/imagotipo.png" class="footer-imagotipo">
+      <div class="footer-info">
 
-    <div class="footer-info">
+        <div class="status-box">
+          <span class="status-label">Estado del servicio</span>
+          <span id="status" class="status-indicator"></span>
+        </div>
 
-      <div class="status-box">
-        <span class="status-label">Estado del servicio</span>
-        <span id="status" class="status-indicator"></span>
+        <div class="clock-box">
+          <span class="clock-label">Hora Local</span>
+          <span id="clock"></span>
+        </div>
+
       </div>
 
-      <div class="clock-box">
-        <span class="clock-label">Hora en la región de Soptec</span>
-        <span id="clock"></span>   <!-- ← ESTE ERA EL FALTANTE 😌🔥 -->
-      </div>
+      <p>
+        Soptec © <span id="year"></span><br>
+        Este sitio fue desarrollado por nuestro propio equipo.
+      </p>
 
     </div>
-
-    <p>
-      Soptec © <span id="year"></span><br>
-      Desarrollado por el equipo de Soptec
-    </p>
-
-  </div>
-
-</footer>
+  </footer>
 
   <!-- JS -->
 
@@ -224,7 +218,55 @@
     });
 
     document.getElementById("year").innerText = new Date().getFullYear();
-    document.getElementById("clock").innerText = time;
+
+    function updateClock() {
+      const now = new Date();
+
+      const options = {
+        timeZone: "America/Montevideo",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      };
+
+      const time = new Intl.DateTimeFormat("es-UY", options).format(now);
+      document.getElementById("clock").innerText = time;
+
+      updateStatus(now);
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function updateStatus(nowUTC) {
+
+      const uyTime = new Date(
+        nowUTC.toLocaleString("en-US", { timeZone: "America/Montevideo" })
+      );
+
+      const day = uyTime.getDay();
+      const hour = uyTime.getHours();
+
+      const status = document.getElementById("status");
+
+      let isOpen = false;
+
+      if (day >= 1 && day <= 5) {
+        if (hour >= 10 && hour < 18) isOpen = true;
+      }
+
+      if (day === 6) {
+        if (hour >= 10 && hour < 14) isOpen = true;
+      }
+
+      if (isOpen) {
+        status.innerText = "Abierto ahora";
+        status.className = "status-indicator open";
+      } else {
+        status.innerText = "Fuera de horario";
+        status.className = "status-indicator closed";
+      }
+    }
 
     const reveals = document.querySelectorAll(".reveal");
 
