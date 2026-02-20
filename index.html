@@ -3,145 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <title>Soptec</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- BOTÓN MENÚ -->
 
-  <nav class="navbar">
-    <div class="logo">
-      <img src="assets/logo.png" alt="Soptec">
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <img src="assets/imagotipo.png" alt="Soptec">
     </div>
 
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#quienessomos">Quiénes somos</a></li>
+    <a href="#inicio">Inicio</a>
+    <a href="#quienessomos">Quiénes somos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#noticias">Noticias tecnológicas</a>
+    <a href="#talleres">Talleres</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#dudas">Consultas</a>
 
-      <li class="dropdown">
-        <a href="#">Servicios ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#servicios">Soporte Técnico</a></li>
-          <li><a href="#servicios">Infraestructura</a></li>
-          <li><a href="#servicios">Redes</a></li>
-          <li><a href="#servicios">Reacondicionamiento</a></li>
-        </ul>
-      </li>
+  </div>
 
-      <li><a href="#talleres">Talleres</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <div class="overlay" id="overlay"></div>
 
   <!-- HERO -->
 
   <section id="inicio" class="hero">
     <div class="hero-content">
+
+      <img src="assets/logo.png" class="hero-logo">
+
       <h1>Tu tecnología, en buenas manos</h1>
-      <p>Infraestructura · Soporte · Reacondicionamiento</p>
+
+      <p>
+        Soluciones tecnológicas orientadas a soporte técnico,
+        infraestructura IT y reacondicionamiento de equipos.
+      </p>
+
     </div>
   </section>
 
   <!-- QUIÉNES SOMOS -->
 
-  <section id="quienessomos" class="section">
+  <section id="quienessomos" class="section reveal">
     <h2>Quiénes somos</h2>
 
-    <p>Soptec nació como un proyecto orientado a resolver necesidades tecnológicas, ofreciendo asesoramiento, soporte técnico y soluciones informáticas personalizadas.</p>
+    <p>
+      Soptec brinda soluciones tecnológicas profesionales orientadas a la
+      reparación, mantenimiento y optimización de equipos informáticos.
+    </p>
 
-    <p>Con el tiempo, evolucionó hacia un servicio integral de reparación, infraestructura IT, redes y optimización de entornos tecnológicos.</p>
-  </section>
-
-  <!-- SECCIÓN VISUAL PREMIUM -->
-
-  <section class="section visual-section">
-    <div class="visual-grid">
-
-      <div>
-        <h2>Soluciones tecnológicas reales</h2>
-        <p>
-          Infraestructura, reparación y optimización de entornos tecnológicos
-          con enfoque profesional y personalizado.
-        </p>
-      </div>
-
-      <div class="visual-image">
-        <img src="assets/tech.jpg" alt="Tecnología Soptec">
-      </div>
-
-    </div>
+    <p>
+      Nuestro enfoque combina soporte técnico, infraestructura IT y
+      reacondicionamiento de dispositivos, priorizando soluciones confiables,
+      eficientes y adaptadas a cada necesidad.
+    </p>
   </section>
 
   <!-- SERVICIOS -->
 
-  <section id="servicios" class="section dark">
+  <section id="servicios" class="section reveal">
     <h2>Servicios</h2>
 
     <div class="grid">
-      <div class="card">Soporte Técnico e Infraestructura</div>
-      <div class="card">Reparación de equipos tecnológicos</div>
-      <div class="card">Mantenimiento y reacondicionamiento</div>
-      <div class="card">Redes personales y empresariales</div>
+      <div class="card">Soporte Técnico</div>
+      <div class="card">Infraestructura IT</div>
+      <div class="card">Reacondicionamiento</div>
+      <div class="card">Redes</div>
     </div>
   </section>
 
-  <!-- TALLERES -->
+  <!-- NOTICIAS -->
 
-  <section id="talleres" class="section">
+  <section id="noticias" class="section reveal">
+    <h2>Noticias tecnológicas</h2>
+
+    <p class="noticias-texto">
+      En este apartado compartimos tendencias, buenas prácticas y contenidos
+      educativos vinculados al ecosistema tecnológico actual.
+    </p>
+
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+      <iframe src="https://www.youtube.com/embed/9bZkp7q19f0"></iframe>
+    </div>
+  </section>
+
+  <!-- TALLERES + MAPA -->
+
+  <section id="talleres" class="section reveal">
     <h2>Talleres</h2>
 
     <div class="grid">
-      <div class="card">Taller Montevideo</div>
-      <div class="card">Taller Paso de los Toros</div>
+      <div class="card">Montevideo</div>
+      <div class="card">Paso de los Toros</div>
+    </div>
+
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps?q=Uruguay&output=embed"></iframe>
     </div>
   </section>
 
-  <!-- CONTACTO PREMIUM -->
+  <!-- CONTACTO -->
 
-  <section id="contacto" class="section dark">
+  <section id="contacto" class="section reveal">
     <h2>Contacto</h2>
 
-    <div class="grid">
+    <div class="contact-grid">
 
-      <a href="https://wa.me/59891491333" target="_blank" class="card link contact-card">
+      <a href="https://wa.me/59891491333" target="_blank" class="contact-item">
         <img src="assets/whatsapp.png">
-        <span>WhatsApp<br>+598 91 491 333</span>
+        <span>WhatsApp</span>
       </a>
 
-      <a href="https://instagram.com/soptec.tecnologia" target="_blank" class="card link contact-card">
+      <a href="https://instagram.com/soptec.tecnologia" target="_blank" class="contact-item">
         <img src="assets/instagram.png">
-        <span>Instagram<br>@soptec.tecnologia</span>
+        <span>Instagram</span>
       </a>
 
-      <a href="mailto:soporte@soptectecnologia.com" class="card link contact-card">
+      <a href="mailto:soporte@soptectecnologia.com" class="contact-item">
         <img src="assets/email.png">
-        <span>Email<br>soporte@soptectecnologia.com</span>
+        <span>Email</span>
       </a>
 
     </div>
+  </section>
+
+  <!-- CONSULTAS -->
+
+  <section id="dudas" class="section reveal">
+
+    <div class="consultas-box">
+
+      <h2>Envíanos tu consulta</h2>
+
+      <form action="https://formspree.io/f/mgollzqd" method="POST">
+
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+
+        <button type="submit">Enviar consulta</button>
+
+      </form>
+
+    </div>
+
   </section>
 
   <!-- FOOTER -->
 
   <footer>
-    <p>Soptec © 2026</p>
+    <div class="footer-container">
+
+      <img src="assets/imagotipo.png" class="footer-imagotipo">
+
+      <p>
+        Soptec © <span id="year"></span><br>
+        Este sitio fue desarrollado por el equipo nuestro propio equipo.
+      </p>
+
+    </div>
   </footer>
 
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
-
-  <a href="https://wa.me/59891491333" 
-     class="whatsapp-float" 
-     target="_blank">
-     <img src="assets/whatsapp.png">
-  </a>
-
-  <!-- NAVBAR SCROLL SCRIPT -->
+  <!-- JS -->
 
   <script>
-    window.addEventListener("scroll", function() {
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
+
+    const toggle = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      overlay.classList.toggle("active");
     });
+
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+
   </script>
 
 </body>
