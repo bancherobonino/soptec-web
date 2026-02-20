@@ -251,7 +251,32 @@ footer {
   opacity: 0.35;
   margin-bottom: 10px;
 }
+.footer-info {
+  margin: 12px 0;
+}
 
+.clock-box {
+  margin-top: 6px;
+}
+
+.clock-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+#clock {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+.open {
+  color: #16a34a;
+}
+
+.closed {
+  color: #dc2626;
+}
 /* REVEAL */
 
 .reveal {
